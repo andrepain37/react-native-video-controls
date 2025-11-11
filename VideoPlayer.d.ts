@@ -1,6 +1,6 @@
-import {Component} from 'react';
-import {StyleProp, ViewStyle} from 'react-native';
-import Video, {LoadError, VideoProperties} from 'react-native-video';
+import { Component } from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
+import Video, { LoadError, VideoProperties } from 'react-native-video';
 
 interface DuckNavigator {
   pop: () => void;
@@ -59,6 +59,22 @@ interface VideoPlayerProperties extends VideoProperties {
   disableTimer?: boolean;
   /** Hide the back button */
   disableBack?: boolean;
+
+  playInBackground?: boolean;
+  playWhenInactive?: boolean;
+  videoSources?: { uri: string; videoResolution: string }[];
+  videoResolution?: string;
+  rate?: number;
+  volume?: number;
+  muted?: boolean;
+  resizeMode?: 'cover' | 'contain';
+  repeat?: boolean;
+  paused?: boolean;
+  title?: string;
+  showTimeRemaining?: boolean;
+  showHours?: boolean;
+  isFullscreen?: boolean;
+  googleCastButton?: React.ReactNode;
 }
 
 export default class VideoPlayer extends Component<VideoPlayerProperties> {
